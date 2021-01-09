@@ -4,8 +4,16 @@ What is this ?
 Alabaster Hotwire is a fork of [Alabaster](http://alabaster.readthedocs.io), the default Sphinx theme,
 quickly modified (hacked ?) to follow the same style as [Hotwire.dev](https://hotwire.dev).
 
+![Screenshot](screenshot.png)
+
 How to use it for Django Hotwire projects ?
 ===========================================
+
+Add the theme to the documentation requirements.txt (along Sphinx)
+
+```
+git+https://github.com/hotwire-django/sphinx-hotwire-theme.git
+```
 
 Change the theme in the `conf.py` file
 ```python
