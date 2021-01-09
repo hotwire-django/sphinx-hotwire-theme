@@ -1,4 +1,4 @@
 include LICENSE
 include README.md
-recursive-include alabaster *.*
-recursive-exclude alabaster .*.swp
+recursive-include alabaster_hotwire *.*
+recursive-exclude alabaster_hotwire .*.swp
