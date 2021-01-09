@@ -10,6 +10,9 @@
     <link rel="canonical" href="{{ theme_canonical_url }}{{ pagename }}.html"/>
   {% endif %}
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 {% endblock %}
 
 {# top+bottom related navs; we also have our own in sidebar #}
@@ -41,6 +44,18 @@
 
 {# Nav should appear before content, not after #}
 {%- block content %}
+<nav class="jump">
+  <ul class="jump__list">
+    <li><a class="jump__list-link jump__list-link--hotwire" href="https://github.com/hotwire-django">Hotwire Django:</a></li>
+    {% for out in topbar %}
+      <li><a
+        class="jump__list-link jump__list-link{% if not out.url %}--disabled{% endif%}{% if out.active %}--active{% endif %}"
+        href="{{out.url}}">
+          {{out.name}}
+      </a></li>
+    {% endfor %}
+  </ul>
+</nav>
 {%- if theme_fixed_sidebar|lower == 'true' %}
   <div class="document">
     {{ sidebar() }}
@@ -86,17 +101,10 @@
 
 {%- block footer %}
     <div class="footer">
-      {% if show_copyright %}&copy;{{ copyright }}.{% endif %}
-      {% if theme_show_powered_by|lower == 'true' %}
-      {% if show_copyright %}|{% endif %}
-      Powered by <a href="http://sphinx-doc.org/">Sphinx {{ sphinx_version }}</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster {{ alabaster_version }}</a>
-      {% endif %}
-      {%- if show_source and has_source and sourcename %}
-      {% if show_copyright or theme_show_powered_by %}|{% endif %}
-      <a href="{{ pathto('_sources/' + sourcename, true)|e }}"
-          rel="nofollow">{{ _('Page source') }}</a>
-      {%- endif %}
+      Brought to you by the
+      <a href="https://github.com/hotwire-django" target="_blank">Hotwire Django</a> team.
+      Standing on the shoulder of <a href="https://github.com/hotwired/"target="_blank">Giants</a>.
+      <span class="dim">Hotwire Django is not affiliated with Hotwire.dev nor Basecamp</span>
     </div>
 
     {% if theme_github_banner|lower != 'false' %}

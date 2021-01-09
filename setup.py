@@ -5,7 +5,7 @@ from setuptools import setup
 
 # Version info -- read without importing
 _locals = {}
-with open("alabaster/_version.py") as fp:
+with open("alabaster_hotwire/_version.py") as fp:
     exec(fp.read(), None, _locals)
 version = _locals["__version__"]
 
@@ -14,16 +14,16 @@ with codecs.open("README.rst", encoding="utf-8") as f:
     readme = f.read()
 
 setup(
-    name="alabaster",
+    name="alabaster_hotwire",
     version=version,
     description="A configurable sidebar-enabled Sphinx theme",
     long_description=readme,
     author="Jeff Forcier",
     author_email="jeff@bitprophet.org",
     url="https://alabaster.readthedocs.io",
-    packages=["alabaster"],
+    packages=["alabaster_hotwire"],
     include_package_data=True,
-    entry_points={"sphinx.html_themes": ["alabaster = alabaster"]},
+    entry_points={"sphinx.html_themes": ["alabaster_hotwire = alabaster_hotwire"]},
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
